@@ -1,0 +1,3 @@
+[submodule "udovin-algobook"]
+	path = udovin-algobook
+	url = git@github.com:udovin/AlgoBook.git
