@@ -4,8 +4,10 @@
 #include <numeric>
 
 struct Fraction {
-    int64_t num = 1;
+    int64_t num = 0;
     int64_t den = 1;
+
+    Fraction() = default;
 
     Fraction(int64_t num_, int64_t den_) : num(num_), den(den_) {
         if (den < 0) {
@@ -42,6 +44,6 @@ Fraction operator/(const Fraction& lhs, const Fraction& rhs) {
     return {num, den};
 }
 
-bool operator>=(const Fraction& lhs, const Fraction& rhs) {
-    return lhs.num * rhs.den >= rhs.num * lhs.den;
+bool operator<(const Fraction& lhs, const Fraction& rhs) {
+    return lhs.num * rhs.den < rhs.num * lhs.den;
 }
